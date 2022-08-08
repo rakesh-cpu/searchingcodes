@@ -50,21 +50,17 @@ public class Linearsearch{
 
 
 //binarysearch
+//binarysearch
 import java.util.*;
 public class BinarySearch{
-    public void bsearch(int arr[],int key){
-        int n = arr.length;
+    public void bsearch(int arr[],int low,int high,int key){
+        //int n = arr.length;
         int flag=0;
-        int low=0;
         int mid;
-        int high=n-1;
         while(low<=high)
         {
              mid=(low+high)/2;
-             
-        
-          
-          if(key==arr[mid]){
+             if(key==arr[mid]){
                 flag=1;
                 break;
             
@@ -76,11 +72,12 @@ public class BinarySearch{
           else{
                 low=mid+1;
               }
-          if(flag==1){
-              System.out.println("searching key found :");
-          }
+          
           
         }
+        if(flag==1){
+              System.out.println("searching key found :");
+          }
     }
     public static void main(String args[]){
           BinarySearch bs = new BinarySearch();
@@ -88,7 +85,8 @@ public class BinarySearch{
           System.out.println("enter a search key:");
           int key = sc.nextInt();
           int arr[]={2,3,4,5,6,7,8,9,24,43,44};
-          bs.bsearch(arr,key);
+          int n=arr.length;
+          bs.bsearch(arr,0,n-1,key);
        //   bs.bsearchrec(arr,key);
           
     }
